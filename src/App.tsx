@@ -24,14 +24,24 @@ interface Movie {
   id: number,
   title: string,
   overview: string,
-  posterPath: string
+  poster_path: string,
+  video: boolean
 }
 
 interface Show {
   id: number,
   title: string,
   overview: string,
-  posterPath: string
+  poster_path: string,
+  video: boolean
+}
+
+interface GetSearchedMoviesData{
+  results: Movie[]
+}
+
+interface GetSearchedShowsData{
+  results: Show[]
 }
 
 
@@ -40,16 +50,16 @@ export const AppContext = createContext<AppContextInterface>({searchValue: "", s
 let timer : NodeJS.Timeout;
 
 function searchMovies(searchValue: string) {
-  axios.get("/3/search/movie?api_key=2a6ffaa687fbf43de796d6fe17378efe&language=en-US&query="+searchValue+"&page=1&include_adult=false")
+  axios.get<GetSearchedMoviesData>("/3/search/movie?api_key=2a6ffaa687fbf43de796d6fe17378efe&language=en-US&query="+searchValue+"&page=1&include_adult=false")
   .then(res=>{
-    console.log(res.data.total_results);
+    let movies = res.data.results;
   })
 }
 
 function searchShows(searchValue: string) {
-  axios.get("/3/search/tv?api_key=2a6ffaa687fbf43de796d6fe17378efe&language=en-US&query="+searchValue+"&page=1&include_adult=false")
+  axios.get<GetSearchedShowsData>("/3/search/tv?api_key=2a6ffaa687fbf43de796d6fe17378efe&language=en-US&query="+searchValue+"&page=1&include_adult=false")
   .then(res=>{
-    console.log(res.data.total_results);
+    let shows = res.data.results;
   })
 }
 
