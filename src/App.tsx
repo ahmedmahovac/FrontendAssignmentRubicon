@@ -76,6 +76,15 @@ function App() {
     }
   }, [searchValue]);
 
+  useEffect(()=>{
+    if(selectedTab==0){
+      searchMovies(searchValue);
+    }
+    else if(selectedTab==1){
+      searchShows(searchValue);
+    }
+  }, [selectedTab]);
+
   const appContext : AppContextInterface = {
     searchValue: searchValue,
     setSearchValue: setSearchValue,
