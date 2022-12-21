@@ -17,10 +17,12 @@ interface AppContextInterface {
   searchValue: string,
   setSearchValue?: (value: string) => void,
   selectedTab: number,
-  setSelectedTab?: (index: number) => void;
+  setSelectedTab?: (index: number) => void,
+  movies?: Movie[],
+  shows?: Show[]
 }
 
-interface Movie {
+export interface Movie {
   id: number,
   title: string,
   overview: string,
@@ -28,7 +30,7 @@ interface Movie {
   video: boolean
 }
 
-interface Show {
+export interface Show {
   id: number,
   title: string,
   overview: string,
@@ -68,8 +70,8 @@ function App() {
   const [searchValue, setSearchValue] = useState("");
   const [selectedTab, setSelectedTab] = useState(0);
 
-  const [movies, setMovies] = useState<Movie[]>();
-  const [shows, setShows] = useState<Show[]>();
+  const [movies, setMovies] = useState<Movie[]>([]);
+  const [shows, setShows] = useState<Show[]>([]);
 
   useEffect(()=>{
     clearTimeout(timer);
@@ -99,7 +101,9 @@ function App() {
     searchValue: searchValue,
     setSearchValue: setSearchValue,
     selectedTab: selectedTab,
-    setSelectedTab: setSelectedTab
+    setSelectedTab: setSelectedTab,
+    movies: movies,
+    shows: shows
   }
 
   return (
