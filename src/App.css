@@ -19,7 +19,7 @@ nav ul{
 
 nav ul li {
   color: inherit;
-  border: 1px solid lightsalmon;
+  border: 1px solid;
   background-color: lightsalmon;
 }
 
@@ -35,6 +35,9 @@ nav ul li a {
   border-radius: 10px;
 }
 
+.selectedTab{
+  color: black;
+}
 
 .container{
   display: grid;
