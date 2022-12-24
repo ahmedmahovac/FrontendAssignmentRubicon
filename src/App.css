@@ -47,4 +47,11 @@ nav ul li a {
 .detailsContainer {
   display: flex;
   flex-direction: column;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+.btnBack {
 }

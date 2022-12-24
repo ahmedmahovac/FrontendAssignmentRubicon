@@ -1,5 +1,4 @@
 import React, { useState, createContext, useEffect } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -26,7 +25,6 @@ export interface Movie {
   title: string;
   overview: string;
   poster_path: string;
-  video: boolean;
 }
 
 export interface Show {
@@ -34,7 +32,6 @@ export interface Show {
   name: string;
   overview: string;
   poster_path: string;
-  video: boolean;
 }
 
 interface GetSearchedMoviesData {
