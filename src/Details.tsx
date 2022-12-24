@@ -12,7 +12,7 @@ type DetailsProps = {
 
 function Details(props: DetailsProps) {
   const { poster_path, title, overview, video } = props;
-
+  console.log(video?.site);
   const navigate = useNavigate();
 
   function handleBackClick() {
@@ -25,13 +25,18 @@ function Details(props: DetailsProps) {
         Back
       </button>
       {video ? (
-        <video
-          src={
-            (video.type === "Youtube"
-              ? "https://www.youtube.com/watch?v="
-              : "https://vimeo.com/") + video.key
-          }
-        />
+        <div>
+          <iframe
+            className="video"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            src={
+              (video.site === "YouTube"
+                ? "https://www.youtube.com/embed/"
+                : "https://vimeo.com/") + video.key
+            }
+          />
+        </div>
       ) : (
         <img
           src={

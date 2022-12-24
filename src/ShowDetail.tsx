@@ -21,7 +21,7 @@ function ShowDetail() {
       .then((resShow) => {
         axios
           .get<VideosData>(
-            `https://api.themoviedb.org/3/tv/12/videos?api_key=2a6ffaa687fbf43de796d6fe17378efe&language=en-US`
+            `https://api.themoviedb.org/3/tv/${id}/videos?api_key=2a6ffaa687fbf43de796d6fe17378efe&language=en-US`
           )
           .then((resVideo) => {
             const videos = resVideo.data.results;
@@ -34,7 +34,7 @@ function ShowDetail() {
       });
   }, []);
 
-  return <Details video={video} {...show} />;
+  return <Details {...show} video={video} />;
 }
 
 export default ShowDetail;

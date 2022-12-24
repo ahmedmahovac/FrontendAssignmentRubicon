@@ -22,6 +22,10 @@ function MovieDetail() {
   const [video, setVideo] = useState<Video>();
 
   useEffect(() => {
+    console.log(video);
+  }, [video]);
+
+  useEffect(() => {
     // get movie
     axios
       .get<Movie>(
@@ -30,10 +34,12 @@ function MovieDetail() {
       .then((resMovie) => {
         axios
           .get<VideosData>(
-            `https://api.themoviedb.org/3/movie/12/videos?api_key=2a6ffaa687fbf43de796d6fe17378efe&language=en-US`
+            `https://api.themoviedb.org/3/movie/${id}/videos?api_key=2a6ffaa687fbf43de796d6fe17378efe&language=en-US`
           )
           .then((resVideo) => {
-            const videos = resVideo.data.results;
+            const videos = resVideo.data.results.filter((video: Video) => {
+              return video.type === "Trailer";
+            });
             setVideo(videos.length ? videos[0] : undefined); // mogu u isti state stavljat al moram onda mijenjat Movie interface
             setMovie(resMovie.data);
           });
@@ -43,7 +49,7 @@ function MovieDetail() {
       });
   }, [id]);
 
-  return <Details video={video} {...movie} />;
+  return <Details {...movie} video={video} />; // ako promijenim redoslijed onda
 }
 
 export default MovieDetail;
