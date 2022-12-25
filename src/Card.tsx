@@ -19,12 +19,13 @@ function Card(props: Props) {
   }
 
   return (
-    <div onClick={handleCardClick} className="card">
+    <div onClick={handleCardClick} className="Card">
       <img
-        src={poster == null ? "" : "https://image.tmdb.org/t/p/w400/" + poster}
+        className="ImageCard"
+        src={poster == null ? "" : "https://image.tmdb.org/t/p/w500/" + poster}
         alt="title"
       />
-      <h3>{title}</h3>
+      <h3 className="CardTitle">{title}</h3>
     </div>
   );
 }

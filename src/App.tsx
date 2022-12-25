@@ -8,6 +8,7 @@ import Movies from "./Movies";
 import Shows from "./Shows";
 import MovieDetail from "./MovieDetail";
 import ShowDetail from "./ShowDetail";
+import Home from "./Home";
 
 axios.defaults.baseURL = "https://api.themoviedb.org";
 
@@ -44,14 +45,14 @@ interface GetSearchedShowsData {
 
 export const AppContext = createContext<AppContextInterface>({
   searchValue: "",
-  selectedTab: -1,
+  selectedTab: 0,
 });
 
 let timer: NodeJS.Timeout;
 
 function App() {
   const [searchValue, setSearchValue] = useState("");
-  const [selectedTab, setSelectedTab] = useState(-1);
+  const [selectedTab, setSelectedTab] = useState(0);
 
   const [movies, setMovies] = useState<Movie[]>([]);
   const [shows, setShows] = useState<Show[]>([]);
@@ -138,9 +139,9 @@ function App() {
     if (searchValue.length >= 3) {
       timer = setTimeout(() => {
         console.log("send api request now");
-        if (selectedTab == 0) {
+        if (selectedTab === 0) {
           searchMovies(searchValue);
-        } else if (selectedTab == 1) {
+        } else if (selectedTab === 1) {
           searchShows(searchValue);
         }
       }, 1000); // call specified function after 1s
@@ -152,7 +153,7 @@ function App() {
   }, [searchValue]);
 
   useEffect(() => {
-    if (selectedTab == 0) {
+    if (selectedTab === 0) {
       if (searchValue) {
         //setShows([]); // ne radi ovo dobro u nekim slucajevima
       }
@@ -160,7 +161,7 @@ function App() {
       searchValue.length >= 3
         ? searchMovies(searchValue)
         : setMovies(topMovies);
-    } else if (selectedTab == 1) {
+    } else if (selectedTab === 1) {
       if (searchValue) {
         //setMovies([]);
       }
@@ -181,8 +182,9 @@ function App() {
   return (
     <AppContext.Provider value={appContext}>
       <Router>
-        <div className="App">
+        <div className="MainContainer">
           <Routes>
+            <Route path="/" element={<Home />} />
             <Route path="movies" element={<Movies />} />
             <Route path="shows" element={<Shows />} />
             <Route path="movies/:id" element={<MovieDetail />} />

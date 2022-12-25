@@ -6,6 +6,16 @@ body {
   margin: 0;
 }
 
+.MainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
+  width: 90%;
+  margin: 0 auto;
+}
+
 nav ul {
   display: flex;
   justify-content: flex-start;
@@ -13,14 +23,15 @@ nav ul {
   list-style: none;
   color: white;
   gap: 1rem;
-  margin: 0.5rem;
-  padding: 0rem;
+  margin: 0;
+  padding: 0;
 }
 
 nav ul li {
   color: inherit;
   border: 1px solid;
   background-color: lightsalmon;
+  font-size: 2.3vw;
 }
 
 nav ul li a {
@@ -28,20 +39,47 @@ nav ul li a {
   text-decoration: none;
 }
 
-.search-bar {
-  margin: 0.5rem;
+.SearchBarContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.SearchBar {
   padding: 0.2rem;
-  width: 90%;
+  width: 100%;
   border-radius: 10px;
+  font-size: 2.3vw;
+}
+
+.MoviesShowsContainer {
+  width: 100%;
 }
 
 .selectedTab {
   color: black;
 }
 
-.container {
+.CardsContainer {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 1vh;
+  row-gap: 1vh;
+}
+
+.ImageCard {
+  width: 100%;
+}
+
+.Card {
+  padding: 1vh;
+  min-width: 0;
+}
+
+.CardTitle {
+  font-size: 3vw;
 }
 
 .detailsContainer {

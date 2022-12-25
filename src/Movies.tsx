@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import { useContext } from "react";
 
 import { AppContext, Movie } from "./App";
 
@@ -9,10 +9,10 @@ import SearchBar from "./SearchBar";
 function Movies() {
   const { movies } = useContext(AppContext);
   return (
-    <div>
+    <div className="MoviesShowsContainer">
       <NavBar />
       <SearchBar />
-      <div className="container">
+      <div className="CardsContainer">
         {movies?.map((movie: Movie) => {
           return (
             <Card

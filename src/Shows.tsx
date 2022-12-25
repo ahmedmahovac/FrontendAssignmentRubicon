@@ -8,13 +8,19 @@ import NavBar from "./NavBar";
 import SearchBar from "./SearchBar";
 
 function Shows() {
-  const { shows } = useContext(AppContext);
+  const { shows, selectedTab, setSelectedTab } = useContext(AppContext);
+
+  useEffect(() => {
+    if (selectedTab !== 1) {
+      setSelectedTab?.(1);
+    }
+  }, []);
 
   return (
     <div>
       <NavBar />
       <SearchBar />
-      <div className="container">
+      <div className="CardsContainer">
         {shows?.map((show: Show) => {
           return (
             <Card

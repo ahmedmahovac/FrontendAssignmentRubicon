@@ -27,6 +27,7 @@ function Details(props: DetailsProps) {
       {video ? (
         <div>
           <iframe
+            title="trailer video"
             className="video"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen

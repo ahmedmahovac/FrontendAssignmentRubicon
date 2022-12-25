@@ -1,26 +1,26 @@
-import React, {useContext} from 'react';
+import React, { useContext } from "react";
 
-import { AppContext } from './App';
+import { AppContext } from "./App";
 
-function SearchBar(){
+function SearchBar() {
+  const { searchValue, setSearchValue } = useContext(AppContext);
 
-    const {searchValue, setSearchValue} = useContext(AppContext);
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchValue?.(e.target.value);
+  };
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setSearchValue?.(e.target.value);
-    }
-
-    return(
-        <div>
-            <input
-            className='search-bar'
-            type="text"
-            placeholder='search'
-            value={searchValue}
-            onChange={handleChange}
-            />
-        </div>
-    );
+  return (
+    <div className="SearchBarContainer">
+      <input
+        autoFocus
+        className="SearchBar"
+        type="text"
+        placeholder="search"
+        value={searchValue}
+        onChange={handleChange}
+      />
+    </div>
+  );
 }
 
 export default SearchBar;
