@@ -17,7 +17,7 @@ function Shows() {
   }, []);
 
   return (
-    <div>
+    <div className="MoviesShowsContainer">
       <NavBar />
       <SearchBar />
       <div className="CardsContainer">

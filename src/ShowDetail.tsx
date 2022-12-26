@@ -34,7 +34,15 @@ function ShowDetail() {
       });
   }, []);
 
-  return <Details {...show} video={video} />;
+  return (
+    <Details
+      id={show?.id}
+      title={show?.name}
+      poster_path={show?.poster_path}
+      overview={show?.overview}
+      video={video}
+    />
+  );
 }
 
 export default ShowDetail;
