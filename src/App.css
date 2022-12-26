@@ -85,18 +85,22 @@ nav ul li a {
 .detailsContainer {
   display: flex;
   flex-direction: column;
-  margin-left: 20%;
-  margin-right: 20%;
-  margin-top: 10%;
-  margin-bottom: 10%;
+  width: 100%;
+  gap: 1rem;
 }
 
-.btnBack {
+
+.btnBox {
+  display: flex;
+  justify-content: left;
+  align-items: center;
 }
 
 .video {
+  border: 0;
   width: 100%;
-  margin-top: 2%;
+  overflow: hidden;
+  min-height: 40vw;
 }
 
 .loader {
