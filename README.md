@@ -3,7 +3,7 @@
 - node_modules are not in repository, they have to be installed with "npm install"
 - App can be run with "npm start"
 
-#Implementation details worth mentioning
+# Implementation details worth mentioning
 
 - I've made an assumption that top 10 movies/tv shows won't be changed between two consecutive app openings (so I store them locally). That's how I understood assignment description. 
 - Some movies/tv shows have trailer videos which are unavailable through player (for example, youtube private videos). There isn't available an easy way to cover that case so i left it like that. 
