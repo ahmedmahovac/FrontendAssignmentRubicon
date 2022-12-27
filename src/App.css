@@ -6,6 +6,40 @@ body {
   margin: 0;
 }
 
+html {
+  font-size: 30px;
+}
+
+@media screen and (max-width: 1200px) {
+  html {
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 200px) {
+  html {
+    font-size: 5px;
+  }
+}
+
 .MainContainer {
   display: flex;
   flex-direction: column;
@@ -30,7 +64,7 @@ nav ul {
 
 nav ul li {
   color: #666;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 nav ul li a {
@@ -38,6 +72,10 @@ nav ul li a {
   text-decoration: none;
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+nav ul li a:hover {
+  color: white;
 }
 
 .selectedTab {
@@ -57,7 +95,7 @@ nav ul li a {
   padding: 0.2rem;
   width: 100%;
   border-radius: 3px;
-  font-size: 1rem;
+  font-size: 0.7rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
@@ -73,8 +111,8 @@ nav ul li a {
 .CardsContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: 1.5vh;
-  row-gap: 1.5vh;
+  column-gap: 1.5rem;
+  row-gap: 1.5rem;
 }
 
 .ImageCard {
@@ -93,7 +131,8 @@ nav ul li a {
 }
 
 .CardTitle {
-  font-size: 3vw;
+  font-size: 1.2rem;
+  padding-left: 0.5rem;
 }
 
 .CardTitle:hover {
@@ -117,7 +156,7 @@ nav ul li a {
 .btnBack {
   border-radius: 5px;
   border-color: #008cba;
-  font-size: 1.5rem;
+  font-size: 0.8rem;
   color: #666;
   background-color: #f3f3f3;
 }
@@ -145,6 +184,7 @@ nav ul li a {
   width: 50px;
   height: 50px;
   animation: spinner 4s linear infinite;
+  margin: 0 auto;
 }
 
 .imgWithTitle {
@@ -153,12 +193,12 @@ nav ul li a {
 }
 
 .DetailTitle {
+  color: #008cba;
   padding: 1rem;
 }
 
 .Overview {
   color: #666;
-  font-style: italic;
 }
 
 @keyframes spinner {

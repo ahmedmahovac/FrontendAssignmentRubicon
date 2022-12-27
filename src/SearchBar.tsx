@@ -15,7 +15,7 @@ function SearchBar() {
         autoFocus
         className="SearchBar"
         type="text"
-        placeholder="search"
+        placeholder="Search"
         value={searchValue}
         onChange={handleChange}
       />
