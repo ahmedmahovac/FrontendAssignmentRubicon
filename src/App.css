@@ -34,7 +34,7 @@ html {
   }
 }
 
-@media screen and (max-width: 200px) {
+@media screen and (max-width: 320px) {
   html {
     font-size: 5px;
   }
@@ -133,6 +133,10 @@ nav ul li a:hover {
 .CardTitle {
   font-size: 1.2rem;
   padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .CardTitle:hover {
@@ -156,7 +160,7 @@ nav ul li a:hover {
 .btnBack {
   border-radius: 5px;
   border-color: #008cba;
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: #666;
   background-color: #f3f3f3;
 }
@@ -195,10 +199,13 @@ nav ul li a:hover {
 .DetailTitle {
   color: #008cba;
   padding: 1rem;
+  font-size: 2rem;
 }
 
 .Overview {
   color: #666;
+  font-size: 1.5rem;
+  font-style: italic;
 }
 
 @keyframes spinner {

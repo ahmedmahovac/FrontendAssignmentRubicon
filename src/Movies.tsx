@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 import { AppContext, Movie } from "./App";
 
@@ -7,7 +7,14 @@ import NavBar from "./NavBar";
 import SearchBar from "./SearchBar";
 
 function Movies() {
-  const { movies } = useContext(AppContext);
+  const { movies, selectedTab, setSelectedTab } = useContext(AppContext);
+
+  useEffect(() => {
+    if (selectedTab !== 0) {
+      setSelectedTab?.(0);
+    }
+  }, []);
+
   return (
     <div className="MoviesShowsContainer">
       <NavBar />

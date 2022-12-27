@@ -29,7 +29,7 @@ function NavBar() {
             }}
             className={selectedTab === 1 ? "selectedTab" : ""}
           >
-            Shows
+            TV Shows
           </Link>
         </li>
       </ul>

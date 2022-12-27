@@ -5,7 +5,7 @@ function Home() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    navigate("/movies");
+    navigate("/shows");
   }, []);
 
   return <div></div>;

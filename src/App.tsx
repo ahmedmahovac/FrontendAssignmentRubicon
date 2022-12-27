@@ -45,14 +45,14 @@ interface GetSearchedShowsData {
 
 export const AppContext = createContext<AppContextInterface>({
   searchValue: "",
-  selectedTab: 0,
+  selectedTab: 1,
 });
 
 let timer: NodeJS.Timeout;
 
 function App() {
   const [searchValue, setSearchValue] = useState("");
-  const [selectedTab, setSelectedTab] = useState(0);
+  const [selectedTab, setSelectedTab] = useState(1);
 
   const [movies, setMovies] = useState<Movie[]>([]);
   const [shows, setShows] = useState<Show[]>([]);
