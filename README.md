@@ -1,7 +1,8 @@
 # Instructions to run
 
-- node_modules are not in repository, they have to be installed with "npm install"
-- App can be run with "npm start"
+- Clone repository
+- run "npm install"
+- run "npm start"
 
 # Implementation details worth mentioning
 
