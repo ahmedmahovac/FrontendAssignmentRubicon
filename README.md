@@ -5,12 +5,8 @@
 
 # Implementation details worth mentioning
 
-- I've made an assumption that top 10 movies/tv shows won't change between two consecutive app openings (so I store them locally). That's how I understood assignment description. 
+- I've made an assumption that top 10 movies/tv shows won't change between two consecutive app openings (so I store them locally).
 - Some movies/tv shows have trailer videos which are unavailable through player (for example, youtube private videos). There isn't an easy way available to cover that case so I left it like that. 
-- Context is used for state management
-- Only functional components are used (including stateful components)
-- ESLint was used throughout development process
 - App si fully responsive
-- No tests were made
 
 
