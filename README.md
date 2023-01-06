@@ -36,8 +36,7 @@
 
 - When the user clicks on a specific MOVIE/TV SHOW, he is taken to the details view.
 - In case of Movies/TV Shows which have a trailer, trailer video is shown instead of the cover image.
-
-
+- The Back Button returns the user back to where he was and with the same state before clicking to see more information about a Movie/TV Show.
 
 
 
