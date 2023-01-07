@@ -30,7 +30,7 @@
 
 ![image](https://user-images.githubusercontent.com/73321593/211110269-c52ddae3-56de-4ed2-8891-7c8fd1228c5e.png)
 
-
+![image](https://user-images.githubusercontent.com/73321593/211110306-6a99ea4e-4f50-4afa-9087-5d816e0812a3.png)
 
 ## View Movie / TV Show details
 
@@ -38,9 +38,6 @@
 - In case of Movies/TV Shows which have a trailer, trailer video is shown instead of the cover image.
 - The Back Button returns the user back to where he was and with the same state before clicking to see more information about a Movie/TV Show.
 
-
-
-![image](https://user-images.githubusercontent.com/73321593/211110306-6a99ea4e-4f50-4afa-9087-5d816e0812a3.png)
 
 
 ![image](https://user-images.githubusercontent.com/73321593/211110320-bbfe641e-ac01-45c7-9f13-1b428fe6770f.png)
